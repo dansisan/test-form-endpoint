@@ -11,6 +11,13 @@ app.post('/test-form', (req, res) => {
     res.json({ message: 'Form submission successful', data: req.body });
 });
 
+
+// Handle GET requests to /test-form
+app.get('/test-form', (req, res) => {
+    console.log('GET request received with query params:', req.query);
+    res.json({ message: 'GET request received', query: req.query });
+});
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
